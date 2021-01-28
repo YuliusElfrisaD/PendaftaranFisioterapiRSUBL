@@ -39,8 +39,14 @@
                     <span class="nav-link-text">Lihat Jadwal</span>
                 </a>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cek Kuota">
+                <a class="nav-link" href="{{ route('kuota') }}">
+                    <i class="fa fa-fw fa-book"></i>
+                    <span class="nav-link-text">Cek Kuota</span>
+                </a>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tambah Jadwal">
-                <a class="nav-link" href="{{ route('create.jadwal') }}">
+                <a class="nav-link" href="{{ route('autofill') }}">
                     <i class="fa fa-fw fa-plus-circle"></i>
                     <span class="nav-link-text">Tambah Jadwal</span>
                 </a>
@@ -49,6 +55,12 @@
                 <a class="nav-link" href="{{ route('create.pasien') }}">
                     <i class="fa fa-fw fa-user"></i>
                     <span class="nav-link-text">Tambah Pasien Baru</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Lihat Data Pasien">
+                <a class="nav-link" href="{{ route('dataPasien') }}">
+                    <i class="fa fa-fw fa-drivers-license-o"></i>
+                    <span class="nav-link-text">Lihat Data Pasien</span>
                 </a>
             </li>
         </ul>
@@ -129,8 +141,9 @@
 <script src="{{ asset('assets/js/sb-admin.min.js') }}"></script>
 <!-- Custom scripts for this page-->
 <script src="{{ asset('assets/js/sb-admin-datatables.min.js') }}"></script>
+<script src="{{ asset('assets/js/sb-admin-datatables.js') }}"></script>
+
 <!-- Custom scripts for this page-->
-<script src="{{ asset('assets/js/sb-admin-datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/vendor/datatables/jquery-3.3.1.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/vendor/datatables/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/vendor/datatables/dataTables.buttons.min.js') }}"></script>

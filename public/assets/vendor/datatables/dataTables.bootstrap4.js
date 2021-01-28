@@ -182,7 +182,6 @@ return DataTable;
 }));
 
 $(document).ready(function() {
-	
     var t = $('#example').DataTable({
          dom: 'lBfrtip',
         buttons: [
@@ -208,7 +207,7 @@ $(document).ready(function() {
                 }
             }
         ],
-       "order": [[ 1, 'asc' ]]
+       "order": [[ 1, "desc" ]]
      });
 
     //index counter
@@ -221,7 +220,7 @@ $(document).ready(function() {
 
 
     // Setup - add a text input to each footer cell
-    $('.cariKolom').each( function () {
+    $('.cari').each( function () {
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Cari '+title+'" />' );
     } );

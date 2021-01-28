@@ -5,22 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Jadwal;
 use DB;
-//use Illuminate\Http\Request;
 
-class KuotaController extends Controller
-{
+//use ;
+
+class KuotaController extends Controller {
+
     public function __construct() {
         $this->JAM_TERAPI = new Jadwal();
     }
 
-    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -29,8 +28,7 @@ class KuotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -40,8 +38,7 @@ class KuotaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -51,8 +48,7 @@ class KuotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -62,8 +58,7 @@ class KuotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -74,8 +69,7 @@ class KuotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -85,26 +79,32 @@ class KuotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
-    
-    public function cek(Request $JAM_TERAPI)
-    {
-        echo $JAM_TERAPI;
-       $kuota = DB::table('jadwal')
-               ->select('JAM_TERAPI')
-               ->where('JAM_TERAPI',$JAM_TERAPI)
-               ->count();
-//       if (!is_null($JAM_TERAPI)) {
-          return redirect()->route('kuota')->with('message', 'Kuota ditemukan '  .(integer) $JAM_TERAPI);
-//       }else{
-//            return redirect()->route('kuota')->with('flash_message_danger', 'Kuota tidak ditemukan');
-//       }
-       
-        
-    }
-    
-    
+
+    public function cek(Request $request) {
+            $tgl_cek = $request->input('cekKuota');
+            
+            $hasil = DB::table('jadwal')
+                    ->select(DB::raw('COUNT(IF(jam_terapi="07:00:00",1,NULL)) AS HASIL7,'
+                            . 'COUNT(IF(jam_terapi="07:50:00",1,NULL)) AS HASIL8,'
+                            . 'COUNT(IF(jam_terapi="08:40:00",1,NULL)) AS HASIL9,'
+                            . 'COUNT(IF(jam_terapi="09:30:00",1,NULL)) AS HASIL10,'
+                            . 'COUNT(IF(jam_terapi="10:20:00",1,NULL)) AS HASIL11,'
+                            . 'COUNT(IF(jam_terapi="11:10:00",1,NULL)) AS HASIL12,'
+                            . 'COUNT(IF(jam_terapi="12:30:00",1,NULL)) AS HASIL13,'
+                            . 'COUNT(IF(jam_terapi="13:20:00",1,NULL)) AS HASIL14,'
+                            . 'COUNT(IF(jam_terapi="14:10:00",1,NULL)) AS HASIL15,'
+                            . 'COUNT(IF(jam_terapi="15:00:00",1,NULL)) AS HASIL16,'
+                            . 'COUNT(IF(jam_terapi="15:50:00",1,NULL)) AS HASIL17,'
+                            . 'COUNT(IF(jam_terapi="16:40:00",1,NULL)) AS HASIL18,'
+                            . 'COUNT(IF(jam_terapi="17:30:00",1,NULL)) AS HASIL19,'
+                            . 'COUNT(IF(jam_terapi="18:50:00",1,NULL)) AS HASIL20,'
+                            . 'COUNT(IF(jam_terapi="19:40:00",1,NULL)) AS HASIL21'))
+                    ->where('TGL_TERAPI', $tgl_cek)
+                    ->get();
+            return view('Jadwal.hasil', compact(['tgl_cek','hasil']));
+        }
+
 }

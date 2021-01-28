@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                                     <label for="tanggalLahir">Tanggal Lahir</label>
-                                    <input class="form-control" id="tanggalLahir" type="date" placeholder="Masukan Tanggal Lahir" name="TGL_LAHIR" data-toggle="tooltip" title="Tanggal Lahir" data-placement="right" required>
+                                    <input class="form-control" id="tanggalLahir" type="date" placeholder="Masukan Tanggal Lahir" name="TGL_LAHIR" data-toggle="tooltip" title="Tanggal Lahir" data-placement="right" data-date-format="DD MM YYYY" required>
                                     <div class="invalid-feedback">Harap masukan tanggal lahir</div>
                         </div>
                         <div class="form-group">
@@ -68,7 +68,4 @@
                     </form>
                 </div>
             </div>
-
-
-
 @endsection

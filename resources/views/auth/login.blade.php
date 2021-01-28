@@ -52,11 +52,11 @@
                                     Login
                                 </button>
                         </div>
-                        <div class="text-center w-full" style="padding-top: 2em;">
+<!--                        <div class="text-center w-full" style="padding-top: 2em;">
                             <a class="txt1" href="#">
                                 Lupa Password?
                             </a>
-                        </div>
+                        </div>-->
                         <div class="text-center w-full" style="padding-top: .75em;">
                             <a class="txt1" href="{{ route('register') }}">
                                 Daftar akun baru
@@ -64,12 +64,12 @@
                             </a>
                         </div>
 
-                          <div class="text-center w-full" style="padding-top: .75em;">
+<!--                          <div class="text-center w-full" style="padding-top: .75em;">
                             <a class="txt1" href="{{ route('kuota') }}">
                                 Cek Kuota Pasien
                                 <i class="fa fa-long-arrow-right"></i>
                             </a>
-                        </div>
+                        </div>-->
                         
                     </form>
                 </div>

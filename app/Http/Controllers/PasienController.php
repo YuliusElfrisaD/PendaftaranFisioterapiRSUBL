@@ -14,8 +14,9 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $pasien = Pasien::all();
-        return view('Pasien.index', ['pasien'=>$pasien]);
+        $dataPasien = Pasien::all();
+        $dataPasien = Pasien::orderBy('id','ASC')->paginate(100);
+        return view('Pasien.show', compact('dataPasien'));
     }
 
     /**
@@ -71,7 +72,8 @@ class PasienController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pasien = Pasien::findOrFail($id);
+        return view('Pasien.edit', compact('pasien'));
     }
 
     /**
@@ -83,7 +85,20 @@ class PasienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'id'              => 'required',
+            'NAMA'               => 'required',
+            'TGL_LAHIR'          => 'required',
+            'UMUR'               => 'required',
+            'JENIS_KELAMIN'      => 'required',
+            'ALAMAT'             => 'required',
+            'NO_TELP'             => 'required'
+
+        ]);
+
+        $pasien = Pasien::findOrFail($id)->update($request->all());
+
+        return redirect()->route('show.pasien')->with('message', 'Data pasien berhasil diubah!');
     }
 
     /**
@@ -94,6 +109,7 @@ class PasienController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $pasien = Pasien::findOrFail($id)->delete();
+         return redirect()->route('pasien.index')->with('message', 'Jadwal berhasil dihapus!');
     }
 }

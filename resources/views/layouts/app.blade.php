@@ -32,7 +32,7 @@
 
 <body>
                 <header id="header" class="alt">
-                    <div class="logo"><span>Penjadwalan Fisioterapi RSU-Bethesda Lempuyangwangi</span></div>
+                    <div class="logo"><span>Pendaftaran Fisioterapi RSU-Bethesda Lempuyangwangi</span></div>
                     <a href="#menu">Menu</a>
                 </header>
 

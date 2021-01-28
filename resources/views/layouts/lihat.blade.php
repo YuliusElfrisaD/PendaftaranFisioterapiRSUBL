@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Penjadwalan Fisioterapi RSU-Bethesda Lempuyangwangi</title>
+    <title>Pendaftaran Fisioterapi RSU-Bethesda Lempuyangwangi</title>
     <!-- Icon-->
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/images/rsubl.jpeg') }}"/>
     <!-- Bootstrap core CSS-->
@@ -25,7 +25,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/">Penjadwalan Fisioterapi RSU-Bethesda Lempuyangwangi</a>
+    <a class="navbar-brand" href="/">Pendaftaran Fisioterapi RSU-Bethesda Lempuyangwangi</a>
 </nav>
 
 @yield('content')

@@ -10,44 +10,39 @@
                 </div>
                 <div class="card-body">
 
-                        <form class="form-inline" style="padding-left: .75em;">
-                            <label class="mr-sm-2" for="inlineFormInput">Pilih Tanggal:</label>
-                            <input type="date" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput">
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                        
                     <br>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                             <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Tanggal Terapi</th>
+                                <th>Jam Terapi</th>
                                 <th>No RM</th>
                                 <th>Nama</th>
                                 <th>Alamat</th>
-                                <th>Tanggal Terapi</th>
-                                <th>Jam Terapi</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
                                 <th>No</th>
-                                <th>No RM</th>
-                                <th>Nama</th>
-                                <th>Alamat</th>
-                                <th>Tanggal Terapi</th>
-                                <th>Jam Terapi</th>
+                                <th class="cari">Tanggal Terapi</th>
+                                <th class="cari">Jam Terapi</th>
+                                <th class="cari">No RM</th>
+                                <th class="cari">Nama</th>
+                                <th class="cari">Alamat</th>
                             </tr>
                             </tfoot>
                             <tbody>
                             @foreach ($jadwal as $value)
                                 <tr>
                                     <td></td>
+                                    <td>{{ Carbon\Carbon::parse($value->TGL_TERAPI)->format('d-m-Y')  }}</td>
+                                    <td>{{ Carbon\Carbon::parse($value->JAM_TERAPI)->format('h:i')  }} </td>
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->NAMA }}</td>
                                     <td>{{ $value->ALAMAT }}</td>
-                                    <td>{{ $value->TGL_TERAPI }}</td>
-                                    <td>{{ $value->JAM_TERAPI }}</td>
                                 </tr>
                             @endforeach
 

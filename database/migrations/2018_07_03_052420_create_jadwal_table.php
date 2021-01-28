@@ -14,12 +14,12 @@ class CreateJadwalTable extends Migration
     public function up()
     {
         Schema::create('jadwal', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('NO_RM');
+            $table->increments('no');
+            $table->string('id');
             $table->string('NAMA');
             $table->string('ALAMAT');
-            $table->string('TGL_TERAPI');
-            $table->string('JAM_TERAPI');
+            $table->date('TGL_TERAPI');
+            $table->time('JAM_TERAPI');
             $table->timestamps();
         });
     }

@@ -10,41 +10,41 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">No RM</label>
+                        <label id="noRMLabel" for="noRMIsi" class="col-sm-2 col-form-label">No RM</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->id }} ">
+                            <input type="text" readonly class="form-control-plaintext" id="noRMIsi" value=": {{ $pasien->id }} ">
                         </div>
 
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Nama Pasien</label>
+                        <label id="namaLabel" for="staticEmail" class="col-sm-2 col-form-label">Nama Pasien</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->NAMA }}  ({{$pasien->JENIS_KELAMIN}})" >
+                            <input type="text" readonly class="form-control-plaintext" id="namaIsi" value=": {{ $pasien->NAMA }}  ({{$pasien->JENIS_KELAMIN}}) " >
                         </div>
 
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Alamat Pasien</label>
+                        <label id="alamatLabel" for="staticEmail" class="col-sm-2 col-form-label">Alamat Pasien</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->ALAMAT }}">
+                            <input type="text" readonly class="form-control-plaintext" id="alamatIsi" value=": {{ $pasien->ALAMAT }} ">
                         </div>
 
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Umur Pasien</label>
+                        <label id="umurLabel" for="staticEmail" class="col-sm-2 col-form-label">Umur Pasien</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->UMUR }}">
+                            <input type="text" readonly class="form-control-plaintext" id="umurIsi" value=": {{ $pasien->UMUR }} ">
                         </div>
 
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Tanggal Lahir Pasien</label>
+                        <label id="tglLahirLabel" for="staticEmail" class="col-sm-2 col-form-label">Tanggal Lahir Pasien</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->TGL_LAHIR }}">
+                            <input type="text" readonly class="form-control-plaintext" id="tglLahirIsi" value=": {{ Carbon\Carbon::parse($pasien->TGL_LAHIR)->format('d-m-Y') }} ">
                         </div>
 
-                        <label for="staticEmail" class="col-sm-2 col-form-label">No Telp</label>
+                        <label id="noTelpLabel" for="staticEmail" class="col-sm-2 col-form-label">No Telp</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $pasien->NO_TELP }}">
+                            <input type="text" readonly class="form-control-plaintext" id="noTelpIsi" value=": {{ $pasien->NO_TELP }} ">
                         </div>
                     </div>
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="example" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="test" width="100%" cellspacing="0">
                             <thead>
                             <tr>
                                 <th>No</th>
@@ -55,8 +55,8 @@
                             <tfoot>
                             <tr>
                                 <th>No</th>
-                                <th>Tanggal Terapi</th>
-                                <th>Jam Terapi</th>
+                                <th class="cari">Tanggal Terapi</th>
+                                <th class="cari">Jam Terapi</th>
                             </tr>
                             </tfoot>
 
@@ -64,8 +64,8 @@
                             @foreach ($jadwal as $j )
                             <tr>
                                 <td></td>
-                                <td>{{ $j->TGL_TERAPI }}</td>
-                                <td>{{ $j->JAM_TERAPI }}</td>
+                                <td>{{ Carbon\Carbon::parse($j->TGL_TERAPI)->format('d-m-Y')  }}</td>
+                                <td>{{ Carbon\Carbon::parse($j->JAM_TERAPI)->format('H:i')  }}</td>
                             </tr>
                             @endforeach
                             </tbody>
