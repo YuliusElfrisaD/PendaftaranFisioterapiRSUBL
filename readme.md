@@ -88,7 +88,7 @@ Then open your browser and go to:
 http://localhost:8000
 ```
 
-📂 Project Structure
+## Project Structure
 PendaftaranFisioterapiRSUBL/
 ├── app/                # Laravel app code
 ├── database/           # Migrations & seeders
@@ -98,7 +98,7 @@ PendaftaranFisioterapiRSUBL/
 ├── .env.example
 └── README.md
 
-🧠 Notes
+## Notes
 
 The project was developed as part of an internship program at RSUBL.
 
