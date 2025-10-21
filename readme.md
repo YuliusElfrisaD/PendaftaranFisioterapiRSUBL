@@ -1,58 +1,109 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Pendaftaran Fisioterapi RSUBL
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-Framework-red?style=flat-square&logo=laravel)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP->=7.4-blue?style=flat-square&logo=php)](https://php.net)
+[![MySQL](https://img.shields.io/badge/Database-MySQL-orange?style=flat-square&logo=mysql)](https://mysql.com)
+[![License](https://img.shields.io/badge/License-Internal-lightgrey?style=flat-square)]
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Overview  
+**Pendaftaran Fisioterapi RSUBL** is a web-based registration system built for the physiotherapy unit at **RSUBL (Rumah Sakit Umum Bethesda Lempuyangwangi)**.  
+The application was developed during an internship project to streamline the patient registration workflow and manage patient data more efficiently.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+## Purpose  
+- Simplify and digitize the patient registration process for physiotherapy services.  
+- Manage both new and returning patient information in a centralized database.  
+- Support clinic administrative operations through a structured Laravel-based system.  
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+## Key Features  
+- 🧾 Online patient registration (new and returning patients)  
+- 📋 Manage patient records and history  
+- 🕐 Appointment queue management  
+- 👩‍⚕️ Role-based access (admin & physiotherapist users)  
+- 📊 Dashboard for registration statistics  
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Tech Stack  
+- **Backend Framework:** Laravel (PHP 7.4)  
+- **Frontend:** Blade Template Engine  
+- **Database:** MySQL  
+- **Web Server:** Apache  
+- **Environment:** Local development using XAMPP  
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+## Getting Started  
 
-## Contributing
+1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/YuliusElfrisaD/PendaftaranFisioterapiRSUBL.git
+cd PendaftaranFisioterapiRSUBL
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2️⃣ Environment Setup
 
-## Security Vulnerabilities
+Copy .env.example and rename it to .env, then configure your database settings:
+```bash
+APP_NAME="Pendaftaran Fisioterapi RSUBL"
+APP_ENV=local
+APP_URL=http://localhost
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=physiotherapy_registration
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+3️⃣ Install Dependencies
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4️⃣ Generate Application Key
+```bash
+php artisan key:generate
+```
+
+5️⃣ Run Database Migrations
+```bash
+php artisan migrate
+```
+
+6️⃣ Run the Application
+```bash
+php artisan serve
+```
+
+
+Then open your browser and go to:
+```bash
+http://localhost:8000
+```
+
+📂 Project Structure
+PendaftaranFisioterapiRSUBL/
+├── app/                # Laravel app code
+├── database/           # Migrations & seeders
+├── resources/          # Blade templates & assets
+├── routes/             # Web routes
+├── public/             # Public assets (CSS, JS, images)
+├── .env.example
+└── README.md
+
+🧠 Notes
+
+The project was developed as part of an internship program at RSUBL.
+
+The system runs in a local Apache + MySQL environment (via XAMPP).
+
+All patient data used during development were dummy/testing data only.
+
+© 2025 · Yulius Elfrisa Desancoko & Osmond Giovanni Indyaputra Internship Project at RSUBL · All Rights Reserved.
